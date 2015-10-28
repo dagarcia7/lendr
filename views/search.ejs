@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<% include partials/header %>
+
+<body>
+
+  <% include partials/navigation %>
+  <div id="main">
+    <div class="row">
+      <div class="small-8 push-2 columns">
+        <form id="item-search">
+          <div class="small-10 columns">
+            <input id="item-search-query" type="text" placeholder="What are you looking to borrow?" name="search" required>
+          </div>
+          <input class="button right radius tiny small-2 columns" type="submit" value="Search"></div>
+        </form>
+      </div>
+
+      <table class="small-8 push-2 columns" id="search-table">
+        <thead>
+          <th>Item Name</th>
+          <th>Location</th>
+          <th>Owner Trustability (Number of Ratings)</th>
+          <th width="100"></th>
+        </thead>
+        <tbody id="search-items">
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <div id="modal-item-request" class="reveal-modal" data-reveal>
+    <h2>Request Item</h2>
+    <form class='item-request'>
+      <p>Item: <span id="modal-item-name"></span></p>
+      <p>Location: <span id="modal-item-location"></span></p>
+      <label>Offered Incentive (Optional):
+        <input id="modal-item-incentive" type="text" placeholder="e.g. Cookies, Donuts, Back Massage, etc.">
+      </label>
+      <input id='item-request-id' class='display-none'>
+      <button class='button tiny radius expand' type='submit'>Request</button>
+    </form>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+
+  <div id="modal-error" class="reveal-modal" data-reveal>
+    <h2>Error</h2>
+    <div class="error">
+
+    </div>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+</div>
+<div class="display-none" id="userId"><%=user%></div>
+<script>
+  $(document).foundation();
+</script>
+</body>
+</html>
+
+

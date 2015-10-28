@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<% include partials/header %>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <% include partials/navigation %>
+
+  <section role="main" class="scroll-container" id="main">
+    <div class="row">
+      <h1 class="display-none">Your Profile</h1>
+      <dl class="tabs vertical" data-tab>
+        <button class="button medium expand" id="open-modal-new-item"><i class="fi-plus"></i> New Item</button>
+        <dd class="active"><a href="#panel1"><i class="fi-mail"></i>   Inbox</a></dd>
+        <dd><a href="#panel2"><i class="fi-folder"></i>   Your Items</a></dd>
+        <dd><a href="#panel3"><i class="fi-folder"></i>   Borrowed Items</a></dd>
+        <dd><a href="#panel4"><i class="fi-widget"></i>   Settings</a></dd>
+      </dl>
+      <div class="tabs-content">
+        <div class="content active" id="panel1">
+          <div class="panel">
+            <h4>Requested Items</h4>
+            <h4 class="subheader"><small>Requests for your items</small></h4>
+            <div id="items-requested">
+
+            </div>
+
+          </div>
+
+          <div class="panel">
+            <h4>Returned Items</h4>
+            <h4 class="subheader"><small>Your items that are being returned</small></h4>
+            <div id="items-returned">
+
+            </div>
+          </div>
+
+        </div>
+        <div class="content" id="panel2">
+          <div class="panel">
+            <h4>Owned Items</h4>
+            <h4 class="subheader"><small>Items you own</small></h4>
+            <div id="items-owned">
+
+            </div>
+          </div>
+        </div>
+        <div class="content" id="panel3">
+          <div class="panel">
+            <h4>Borrowed Items</h4>
+            <h4 class="subheader"><small>Items you have borrowed</small></h4>
+            <div id="items-borrowed">
+
+            </div>
+          </div>
+        </div>
+        <div class="content" id="panel4">
+          <div class="panel cf">
+            <h4>Settings</h4>
+            <h4 class="subheader"><small>Edit your settings here</small></h4>
+            <div id="settings-display">
+
+            </div>
+            <button class="button tiny radius left" id="open-modal-user-settings">Edit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="modal-item-new" class="reveal-modal" data-reveal>
+  <h3>Post New Item</h3>
+  <h3 class="subheader"><small>Post an item you are willing to lend</small></h3>
+  <form id="item-new">
+    <label for="description">Item Name</label>
+    <input id="item-new-description" type="text" placeholder="e.g. Hammer, Screwdriver, Tape" name="description" required>
+    <input class="button expand radius small" type="submit" value="Post Item">
+  </form>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="modal-item-delete" class="reveal-modal" data-reveal>
+  <h2>Delete Item</h2>
+  <h3>Are you sure you want to delete this item?</h3>
+  <div class='right'>
+    <form id="item-delete-form">
+      <input class="display-none" id="item-delete-form-itemId" name="itemId">
+      <input class="button tiny success radius" type="submit" value=" Yes "/>
+    </form>
+    <button class="button tiny alert radius close-modal">No</button>
+  </div>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="modal-user-settings" class="reveal-modal" data-reveal>
+  <h2>Edit Account Settings</h2>
+  <form id="user-edit-form">
+    <label for="name">Name</label>
+    <input type="text" id="modal-name" placeholder="Enter your name" name="name">
+    <label for="location">Location</label>
+    <input type="text" id="modal-location" placeholder="Where do you live?" name="location">
+    <label for="password-s">Password</label>
+    <input type="password" id="modal-password" placeholder="Password" name="password">
+    <input class="button tiny radius success" type="submit" value="Save"/>
+    <button class="button tiny radius alert close-modal">Cancel</button>
+  </form>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="modal-lendr-rate" class="reveal-modal" data-reveal>
+  <h2>Rate Your Borrower</h2>
+  <form id="lendr-rating-form">
+    <label>Rate your interaction on scale from 1 to 5</label>
+    <input class='display-none' id="modal-returnId" name="returnId"></input>
+    <input class='display-none' id="modal-itemId" name="itemId"></input>
+    <input type="radio" name="lenRating" value="1" id="rating-1" required><label for="rating-1">1</label>
+    <input type="radio" name="lenRating" value="2" id="rating-2"><label for="rating-2">2</label>
+    <input type="radio" name="lenRating" value="3" id="rating-3"><label for="rating-3">3</label>
+    <input type="radio" name="lenRating" value="4" id="rating-4"><label for="rating-4">4</label>
+    <input type="radio" name="lenRating" value="5" id="rating-5"><label for="rating-5">5</label>
+    <div>
+      <input class="button tiny radius" type="submit" value="Rate"/>
+      <button class="button tiny radius close-modal">Cancel</button>
+    </div>
+  </form>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="modal-borrower-rate" class="reveal-modal" data-reveal>
+  <h2>Rate Your lendr</h2>
+  <form id="borrower-rating-form">
+    <label>Rate your interaction on scale from 1 to 5</label>
+    <input class='display-none' id="modal-borrower-borrowerId" name="borrowerId"></input>
+    <input class='display-none' id="modal-borrower-itemId" name="itemId"></input>
+    <input type="radio" name="borRating" value="1" id="rating-1" required><label for="rating-1">1</label>
+    <input type="radio" name="borRating" value="2" id="rating-2"><label for="rating-2">2</label>
+    <input type="radio" name="borRating" value="3" id="rating-3"><label for="rating-3">3</label>
+    <input type="radio" name="borRating" value="4" id="rating-4"><label for="rating-4">4</label>
+    <input type="radio" name="borRating" value="5" id="rating-5"><label for="rating-5">5</label>
+    <div>
+      <input class="button tiny radius" type="submit" value="Rate"/>
+      <button class="button tiny radius close-modal">Cancel</button>
+    </div>
+  </form>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="modal-error" class="reveal-modal" data-reveal>
+  <h2>Error</h2>
+  <div class="error">
+
+  </div>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+</div>
+<div class="display-none" id="userId"><%=user%></div>
+<script>
+  $(document).foundation();
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<% include partials/header %>
+
+<body>
+  <!-- NAVIGATION -->
+  <% include partials/navigation %>
+
+  <!-- MAIN -->
+  <div id="main">
+    <div class="index-title">
+      <img src="/img/logo.png" alt="lendr">
+    </div>
+    <div class="row" id="login-signup-form">
+      <div class="small-4 push-1 columns panel">
+        <!-- LOGIN FORM -->
+        <h3>Login</h3>
+        <h3 class="subheader"><small>Login now to lend & borrow!</small></h2>
+          <form id="login-form">
+            <label for="email-l">MIT Email <span class="red">*</span></label>
+            <input id="email-l" type="email" placeholder="Email" name="email" required>
+            <label for="password-l">Password <span class="red">*</span></label>
+            <input type="password" id="password-l" placeholder="Password" name="password" required>
+            <input class="button expand radius small" type="submit" value="Log In"/>
+          </form>
+        </div>
+
+        <!-- SIGNUP FORM -->
+        <div class="small-5 pull-1 columns panel">
+          <h3>Signup</h3>
+          <h3 class="subheader"><small>Become a lendr today!</small></h3>
+          <form id="register-form">
+            <label for="name">Name <span class="red">*</span></label>
+            <input type="text" id="name" placeholder="Enter your name" name="name" required>
+            <label for="email-s">MIT Email <span class="red">*</span></label>
+            <input id="email-s" type="email" placeholder="Email" name="email" required>
+            <label for="password-s">Password <span class="red">*</span></label>
+            <input type="password" id="password-s" placeholder="Password" name="password" required>
+            <label for="password-confirm-s">Confirm Password <span class="red">*</span></label>
+            <input type="password" id="password-confirm-s" placeholder="Confirm Password" name="confirm_password" required>
+            <label for="location">Location <span class="red">*</span></label>
+            <input type="text" id="location" placeholder="Where do you live?" name="location" required>
+            <input class="button expand radius small" type="submit" value="Sign Up"/>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-error" class="reveal-modal" data-reveal>
+      <h2>Error</h2>
+      <div class="error">
+
+      </div>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+
+    <div id="index-background"></div>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+  </html>

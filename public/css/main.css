@@ -1,0 +1,239 @@
+/**
+ * Author: Aaron Suarez;
+ */
+
+ /** GENERAL LAYOUT **/
+ html,
+ body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    background: #f4f4f4;
+}
+
+dd a {
+    transition: 100ms ease-out !important;
+}
+
+.contain-to-grid .top-bar,
+.row {
+    max-width: 80rem;
+}
+
+#nav-container {
+    background: #0288d1 !important;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.top-bar {
+    height: 55px !important;
+    line-height: 55px !important;
+}
+
+.contain-to-grid,
+.top-bar,
+#logo-link {
+    background: none !important;
+}
+
+.top-bar {
+    padding-top: 5px !important;
+    margin-bottom: 2em !important;
+}
+
+.top-bar-section a {
+    background: #0288d1 !important;
+}
+
+.top-bar-section a:hover {
+    background: #01579b !important;
+    text-decoration: none !important;
+    color: white !important;
+}
+
+.nav-active a {
+    background: #01579b !important;
+}
+
+.top-bar.expanded .title-area {
+    background: none;
+}
+
+.top-bar .toggle-topbar.menu-icon a {
+    color: #0288d1 !important;
+}
+
+.top-bar .toggle-topbar.menu-icon a span::after {
+    box-shadow: 0 0px 0 1px #0288d1, 0 7px 0 1px #0288d1, 0 14px 0 1px #0288d1 !important;
+}
+
+#logo-link {
+    height: auto;
+}
+
+#logo-link img {
+    height: 40px;
+}
+
+#error-message {
+    margin-top: -32px;
+}
+
+/** LOGIN/SIGNUP **/
+.index-title {
+    margin: 0 auto;
+    width: 15em;
+    padding: 3em 0 5em;
+}
+
+.index-title img {
+    width: 500px;
+}
+
+#index-background {
+    background: url('../img/desktop.jpg') no-repeat 37% 97%;
+    opacity: 0.9;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top:0;
+    z-index: -10;
+    -webkit-filter: blur(7px);
+    -moz-filter: blur(7px);
+    -o-filter: blur(7px);
+    -ms-filter: blur(7px);
+    filter: blur(7px);
+}
+
+.red {
+    color: red;
+}
+
+/** SEARCH **/
+#search-table {
+    padding: 0 !important;
+}
+
+/** PROFILE **/
+.tabs-content .content {
+    padding-left: 21%;
+}
+
+.tabs.vertical {
+    margin: 1em 0 !important;
+}
+
+.tabs dd {
+    border: 1px solid rgba(0,0,0,0.12);
+    border-bottom: 0;
+}
+
+.tabs dd:last-child {
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+
+.tabs dd.active a {
+    color: #0288d1 !important;
+    border-left: 5px solid #0288d1;
+    font-weight: bolder;
+}
+
+.tabs dd a {
+    background: white;
+}
+
+.tabs dd a:hover {
+    background: #0288d1 !important;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+#new-item {
+    position: relative;
+}
+
+#new-item button {
+    position: absolute;
+    right: 0;
+}
+
+.item {
+    padding: 1em;
+    border-radius: 2px;
+    border-top: 1px solid rgba(0,0,0,0.16);
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.item:last-child {
+    border-bottom: 1px solid rgba(0,0,0,0.16);
+}
+
+.item-request,
+.request-approve,
+.request-deny,
+.item-return,
+.return-approve,
+.return-deny {
+    display: inline;
+}
+
+.item-request .button {
+    box-shadow: none !important;
+    vertical-align: middle;
+}
+
+#item-delete-form {
+    display: inline;
+}
+
+/** MISC **/
+
+.button,
+.panel {
+    transition: 200ms ease-out;
+}
+
+.panel {
+    background: white;
+}
+
+a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.cursor-move {
+    cursor: move;
+}
+
+.hidden {
+    visibility: hidden !important;
+}
+
+.display-none {
+    display: none;
+}
+
+ .cf {
+  overflow: hidden;
+}
+
+.size-12 { font-size: 12px; }
+.size-14 { font-size: 14px; }
+.size-16 { font-size: 16px; }
+.size-18 { font-size: 18px; }
+.size-21 { font-size: 21px; }
+.size-24 { font-size: 24px; }
+.size-36 { font-size: 36px; }
+.size-48 { font-size: 48px; }
+.size-60 { font-size: 60px; }
+.size-72 { font-size: 72px; }

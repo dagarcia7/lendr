@@ -1,0 +1,26 @@
+<% if (user) {%>
+<div class="contain-to-grid" id="nav-container">
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name"><a href="/" id="logo-link"><img src="/img/logo-white.png" alt="lendr Logo"></a></li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+    <div id="nav-wrapper">
+      <div id="nav-links">
+        <section class="top-bar-section">
+          <ul class="right">
+            <%if (user) {%>
+            <li <%if (search) {%>class="nav-active"<%}%>><a href="/search" id="search">Search</a></li>
+            <li <%if (profile) {%>class="nav-active"<%}%>><a href="/profile" id="profile">Your Profile</a></li>
+            <li><a href="#" id="logout">Logout</a></li>
+            <%} else {%>
+            <!-- <li><a href="/" id="login">Login/Sign Up</a></li> -->
+            <% } %>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </nav>
+</div>
+<%}%>
+

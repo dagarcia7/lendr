@@ -1,0 +1,25 @@
+{{#each requests}}
+<div class='item cf' id="{{_id}}" data-itemId="{{item._id}}">
+    <div class="left"><div>{{item.description}} requested by {{borrower.name}} </div>
+    <div>Incentive: {{#if incentive}}{{incentive}}{{else}}None{{/if}}</div>
+    <div>
+        <span>Trustability:</span>
+        <span class="rateit" data-rateit-value="{{borrower.trustability.value}}" data-rateit-ispreset="true" data-rateit-readonly="true"></span>
+        <span>({{borrower.trustability.transactions}})</span>
+    </div>
+</div>
+<div class='right'>
+    <form class='request-approve'>
+        <input class='display-none' value="{{borrower._id}}"></input>
+        <input class='display-none' value="{{item._id}}"></input>
+        <input class='display-none' value="{{_id}}">
+        <button class='button tiny success radius'><i class="fi-check"></i> Approve </button>
+    </form>
+    <form class='request-deny'>
+        <input class='display-none' value="{{_id}}"></input>
+        <button class='button tiny alert radius'><i class="fi-x"></i> Deny </button>
+    </form>
+</div>
+</div>
+{{/each}}
+<script src="/js/rateit.js"></script>

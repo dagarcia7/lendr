@@ -1,0 +1,17 @@
+{{#each returns}}
+<div class='item' id="{{_id}}" data-itemId="{{item._id}}">
+    {{item.description}}
+    <div class='right'>
+        <form class='return-approve'>
+            <input class='display-none' value="{{borrower._id}}"></input>
+            <input class='display-none' value="{{item._id}}"></input>
+            <input class='display-none' value="{{_id}}">
+            <button class='button tiny success radius'><i class="fi-check"></i> Approve </button>
+        </form>
+        <form class='return-deny'>
+            <input class='display-none' value="{{_id}}"></input>
+            <button class='button tiny alert radius'><i class="fi-x"></i> Deny </button>
+        </form>
+    </div>
+</div>
+{{/each}}

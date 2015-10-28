@@ -1,0 +1,27 @@
+<head>
+  <title>lendr <%= title %></title>
+  <link rel="stylesheet" href="/css/foundation.css">
+  <link rel="stylesheet" href="/css/jquery-ui.css">
+  <link rel="stylesheet" href="/css/foundation-icons/foundation-icons.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/rateit.css">
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+  <script src="/js/jquery.js"></script>
+  <script src="/js/jquery-ui.js"></script>
+  <script src="/js/mandrill.js"></script>
+  <script src="/js/helpers.js"></script>
+  <script src="/js/foundation.js"></script>
+  <script src="/js/handlebars.runtime.js"></script>
+  <script src="/js/rateit.js"></script>
+  <script src="/js/helpers.js"></script>
+  <script src="/js/templates.js"></script>
+  <script src="/js/index.js"></script>
+  <script src="/js/users.js"></script>
+
+  <%if (profile) {%>
+  <script src="/js/profile.js"></script>
+  <%}%>
+  <% if (search) {%>
+  <script src="/js/search.js"></script>
+  <%}%>
+</head>

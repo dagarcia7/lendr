@@ -1,0 +1,13 @@
+{{#each borrowedItems}}
+<div class='item' id="{{item._id}}">
+    {{item.description}} | {{item.owner.email}}
+    <form class='item-return'>
+        <input class='display-none' value="{{item._id}}"></input>
+        {{#if returned}}
+        <button class='button tiny radius right' type='submit' disabled=true >Submitted for Return</button>
+        {{else}}
+        <button class='button tiny radius right' type='submit'>Return</button>
+        {{/if}}
+    </form>
+</div>
+{{/each}}

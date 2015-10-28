@@ -1,0 +1,19 @@
+{{#each items}}
+<tr class="item">
+    <td>{{item.description}}</td>
+    <td>{{item.owner.location}}</td>
+    <td>
+        <span class="rateit" data-rateit-value="{{item.owner.trustability.value}}" data-rateit-ispreset="true" data-rateit-readonly="true"></span>
+        ({{item.owner.trustability.transactions}})
+    </td>
+    <td>
+        <input class="display-none" value={{item._id}}>
+        {{#if requested}}
+        <button class='button tiny radius right' id="open-modal-item-request item-button-{{item._id}}" disabled=true><span id="item-button-{{item._id}}">Requested</span></button>
+        {{else}}
+        <button class='button tiny radius right' id="open-modal-item-request"><span id="item-button-{{item._id}}">Request</span></button>
+        {{/if}}
+    </td>
+</tr>
+{{/each}}
+<script src="/js/rateit.js"></script>
